@@ -39,10 +39,10 @@ def deletar(request):
     id_del = request.POST.get('id_usuario')
     Usuario.objects.filter(id_usuario=id_del).delete()
 
-    usuarios = {
+    todos_usuarios = {
         'usuarios': Usuario.objects.all()
 
     }
 
     # Retornar os dados para a pagina de usuarios.
-    return render(request, 'usuarios/usuarios.html', usuarios)
+    return render(request, 'usuarios/usuarios.html', todos_usuarios)
